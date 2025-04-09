@@ -1,0 +1,24 @@
+{
+  "name": "@devotionlabs/server",
+  "version": "0.1.0",
+  "private": "true",
+  "description": "Server for a simple fullstack application",
+  "author": "DevotionLabs",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist node_modules",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@trpc/server": "^11.0.4",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "typescript": "^5.8.3"
+  }
+}

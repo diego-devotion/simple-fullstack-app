@@ -1,0 +1,17 @@
+{
+  "name": "simple-fullstack-app",
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "start": "npm run start --workspace packages/server",
+    "clean": "rm -rf node_modules && npm run clean --workspaces",
+    "dev": "npm run build --workspaces && npm run start"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "^5.8.3"
+  }
+}
