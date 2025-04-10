@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const uiFilesPath = path.resolve(__dirname, "../../client/build");
+const uiFilesPath = path.resolve(__dirname, "../../../client/dist");
 
 export class Server {
   private port: number;

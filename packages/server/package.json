@@ -1,7 +1,7 @@
 {
   "name": "@devotionlabs/server",
   "version": "0.1.0",
-  "private": "true",
+  "private": "false",
   "description": "Server for a simple fullstack application",
   "author": "DevotionLabs",
   "license": "MIT",
@@ -20,5 +20,13 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "typescript": "^5.8.3"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   }
 }
