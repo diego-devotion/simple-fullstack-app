@@ -5,17 +5,21 @@
   "workspaces": [
     "packages/*"
   ],
+  "packageManager": "^npm@10.9.0",
   "scripts": {
-    "build": "npm run build --workspaces",
-    "start": "npm run start --workspace packages/server",
-    "clean": "rm -rf node_modules && npm run clean --workspaces",
-    "dev": "npm run build --workspaces && npm run start",
-    "lint": "npm run lint --workspaces"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "start": "npm run start --workspace packages/server"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",
     "@types/node": "^22.14.0",
     "eslint": "^9.24.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.29.1"
   }

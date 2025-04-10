@@ -1,11 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { trpc } from "./utils/trpc";
-import { httpBatchLink } from "@trpc/client";
-import Test from "./Test";
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { trpc } from './utils/trpc';
+import { httpBatchLink } from '@trpc/client';
+import Test from './Test';
 
 function App() {
   const [queryClient] = useState(() => new QueryClient());
@@ -13,9 +13,9 @@ function App() {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: "http://localhost:3000/trpc",
-        }),
-      ],
+          url: 'http://localhost:3000/trpc'
+        })
+      ]
     })
   );
 
