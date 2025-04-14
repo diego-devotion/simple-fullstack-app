@@ -1,11 +1,11 @@
-import cors from 'cors';
+import cors, { CorsOptions } from 'cors';
 import express from 'express';
 import * as trpcExpress from '@trpc/server/adapters/express';
-import { ApiConfig } from '../config/types.js';
-import { Logger } from '../logger/Logger.js';
+import { ApiConfig } from './types.js';
 import { ServerRouter } from '../routes/index.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import logger from '../logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,7 +26,7 @@ export class Server {
     this.exposeUi();
   }
 
-  private setupCors(corsOrigin: ApiConfig['corsOrigin']) {
+  private setupCors(corsOrigin: CorsOptions['origin']) {
     this.app.use(
       cors({
         origin: corsOrigin
@@ -52,6 +52,6 @@ export class Server {
   }
 
   public start() {
-    this.app.listen(this.port, () => Logger.info(`Server ready at port ${this.port}`));
+    this.app.listen(this.port, () => logger.info(`Server ready at port ${this.port}`));
   }
 }

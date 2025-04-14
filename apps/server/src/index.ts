@@ -1,8 +1,11 @@
+import 'dotenv/config';
 import { Server } from './server/Server.js';
-import { apiConfig } from './config/config.js';
 import { serverRouter } from './routes/index.js';
+import { env } from './config/env.js';
 
-const server = new Server(apiConfig, serverRouter);
+const { API_PORT, API_CORS_ORIGIN } = env;
+
+const server = new Server({ port: API_PORT, corsOrigin: API_CORS_ORIGIN }, serverRouter);
 server.start();
 
 export { serverRouter };
