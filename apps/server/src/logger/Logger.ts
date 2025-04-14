@@ -1,4 +1,4 @@
-import { SeverityColors, SeverityLevels } from './types.js';
+import { SeverityColors, SeverityLevel } from './types.js';
 
 const severityColors: SeverityColors = {
   info: '\x1b[32m', // Green
@@ -26,7 +26,7 @@ export class Logger {
     Logger.log('debug', message);
   }
 
-  private static log(severity: SeverityLevels, message: string) {
+  private static log(severity: SeverityLevel, message: string) {
     const color = severityColors[severity];
     console.log(`${color}${Logger.formatMessage(severity, message)}\x1b[0m`);
   }
